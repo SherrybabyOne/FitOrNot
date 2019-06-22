@@ -1,0 +1,11 @@
+/* pages/login/login.wxss */
+.login image{
+display: block;
+height: 100px;
+width:100px;
+margin-left:35%;
+margin-top: 70px;
+margin-bottom: 40px;
+border-radius: 50%;
+border: 1px solid black
+}

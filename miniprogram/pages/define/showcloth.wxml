@@ -1,0 +1,42 @@
+
+<i-tabs current="{{ current }}" color="#f759ab"  bindchange="handleChange">
+    <i-tab key="1" title="配饰">
+    </i-tab>
+    <i-tab key="2" title="上衣">
+    </i-tab>
+    <i-tab key="3" title="下衣"></i-tab>
+    <i-tab key="4" title="鞋袜"></i-tab>
+    <i-tab key="5" title="套装"></i-tab>
+</i-tabs>
+
+<view wx:if="{{tab1}}" class='tab1'>
+  <block wx:for="{{up}}" wx:key="{{item.id}}">
+    <image  style="width: {{width}}px; height: {{width}}px; padding:2px 2px 2px 2px;border:1px solid #cccccc" src="{{item.pic_url}}" bindtap='ondefine' data-dataset="{{item}}"></image>
+   </block>
+</view>
+<view wx:if="{{tab2}}" class='tab2'>
+  <block wx:for="{{low}}" wx:key="{{item.id}}">
+     <image  style="width: {{width}}px;  height: {{width}}px;padding:2px 2px 2px 2px;border:1px solid #cccccc" src="{{item.pic_url}}" bindtap='ondefine' data-dataset="{{item}}"></image>
+   </block>
+</view>
+<view wx:if="{{tab3}}" class='tab3'>
+  <block wx:for="{{s}}" wx:key="{{item.id}}">
+     <image  style="width: {{width}}px;  height: {{width}}px; padding:2px 2px 2px 2px;border:1px solid #cccccc" src="{{item.pic_url}}" bindtap='ondefine' data-dataset="{{item}}"></image>
+   </block>
+</view>
+<view wx:if="{{tab4}}" class='tab4'>
+  <block wx:for="{{p}}" wx:key="{{item.id}}">
+     <image  style="width: {{width}}px;  height: {{width}}px; padding:2px 2px 2px 2px;border:1px solid #cccccc" src="{{item.pic_url}}" bindtap='ondefine' data-dataset="{{item}}"></image>
+   </block>
+</view>
+<view wx:if="{{tab5}}" class='tab5'>
+<text style='font-size:12px;'>即已搭配好的衣服,点击删除</text>
+  <view style="" >
+  <view wx:for="{{suit}}" wx:key="{{item.id}}" style="display:inline-block;padding:2px 0px;"  data-dataset="{{item.id}}" bindtap='ondefine2'>
+     <block wx:for="{{item.clothes}}" wx:for-item="items" wx:key="{{items.id}}">
+     <image  style="display:inline-block;padding:2px 2px 2px 2px;width:{{width}}px;height:{{width}}px;position:relative;top:{{0}}rpx;left:3rpx;" src="{{items.pic_url}}" ></image>
+     
+    </block>
+  </view>
+  </view>
+</view>

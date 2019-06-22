@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    
+  },
+  
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "发布我的圈子",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+
+}

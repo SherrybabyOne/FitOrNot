@@ -1,0 +1,39 @@
+/* pages/circle/cicle.wxss */
+.mycard{
+   float: left;
+  margin: 5% 1%;
+  padding: 0px 1%;
+  border: 1px solid #cccccc;
+  position: relative;
+  width: 45%;
+  height: 300px;
+  border-radius:5px;
+  background-color: white;
+  overflow:hidden;
+}
+.pic{
+  width: 100%;
+  height:238px;
+}
+.desc{
+  text-align: left;
+  word-break: break-all;
+  font-size: 12px;
+  padding: 0px 5px;
+  font-weight: 550;
+  
+}
+.icon{
+  float: left;
+  padding: 0px 0px;
+  width:42px;
+  height: 42px;
+   border-radius: 50%; 
+  border: 1px solid #eee; 
+  overflow: hidden;
+}
+.name{
+  font-size: 12px;
+  font-weight: 300;
+  color: #666666;
+}

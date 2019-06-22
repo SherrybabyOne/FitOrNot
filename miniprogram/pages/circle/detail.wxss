@@ -1,0 +1,101 @@
+.abc{
+  background-color: white;
+}
+.myicon{
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin:20px 10px 0px 20px;
+}
+.myname{
+  margin-top: 20px;
+  font-size: 14px;
+  padding-bottom: 40px;
+}
+.mydesc{
+  font-size: 14px;
+  margin-right: 20px;
+  margin-left: 20px;
+  text-align: left;
+}
+.btn{
+  float: left;
+  position: absolute;
+  top:20px;
+  left: 75%;
+  margin-right:0px;
+  border: 1px solid #cccccc;
+}
+.btn2{
+  float: left;
+  position: absolute;
+  top:20px;
+  left: 48%;
+  margin-right:0px;
+  border: 1px solid #cccccc;
+}
+/* 图片 */
+.photo-view{
+  background: rebeccapurple;
+  
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+.photo{
+  background: rgb(255, 166, 0);  
+  float: left;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+}
+
+
+/* 时间、删除、点赞评论 */
+.TDD-view{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+.like{
+  width:15px;
+  height:15px;
+}
+
+/* 点赞 */
+.zan-view {
+  width: 100%;
+  background: white;
+  margin-bottom: 20rpx;
+}
+
+/* 评论 */
+.discuss-view{
+  background: white;
+  width: 97%;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.discuss{
+  background: rgb(235, 235, 235);
+  line-height: 35rpx;
+}
+
+.discuss label{
+  font-size: 12px;
+}
+
+.discuss-user{
+  color: rgb(88, 103, 138);
+  margin-left: 10px;
+}
+
+.content{
+  margin-left: 10rpx;
+}
+.idiscuss{
+  margin-left: 10px;
+  font-size: 15px;
+}

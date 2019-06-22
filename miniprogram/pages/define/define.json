@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    
+  },
+  
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "更改衣物属性",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+
+}

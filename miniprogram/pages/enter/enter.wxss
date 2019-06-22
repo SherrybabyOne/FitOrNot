@@ -1,0 +1,52 @@
+/* pages/enter/enter.wxss */
+.abc{
+  background-color: white;
+  margin: 5px 8px;
+}
+.myicon{
+  float: left;
+  padding: 5px 10px;
+  width: 70px;
+  height: 70px;
+}
+.myname{
+  display: inline-block;
+  padding: 5px 0px;
+}
+.mysign{
+  display: inline-block;
+  padding-left: 5px;
+  font-size: 13px;
+  color: #666666;
+}
+.mydesc{
+  display: block;
+  margin: 0px 10px;
+  padding: 0px 8px;
+  font-size: 13px;
+}
+.but1 {
+  background-color: #ffffff;
+  display: inline-block;
+  width: 100%;
+  text-align:left;
+  margin-left:0px;
+  font-size: 15px;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+.bodyframe{
+  background-color: #ffffff;
+  margin:5px 0px 0px 0px;
+  padding-left: 15px;
+  font-size: 16px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.desc{
+  font-size: 14px;
+  background-color: #ffffff;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

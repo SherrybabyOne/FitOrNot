@@ -1,0 +1,97 @@
+<view class="fitting">
+    <view class="clothes-container">
+      <movable-area style="height: 888rpx; width: 450rpx;border:1px solid black">
+        <movable-view
+          style="height: 80px; width: 80px;"
+          x="{{suit[1].x}}"
+          y="{{suit[1].y}}"
+          direction="all"
+          bindchange="onChange"
+          data-type="1"
+        >
+          <cover-image src="{{suit[1].url}}"></cover-image>
+          <!-- <cover-image src='http://prl9w3brg.bkt.clouddn.com/a1.png'></cover-image> -->
+        </movable-view>
+        <movable-view
+          style="height: 100px; width: 80px;"
+          x="{{suit[2].x}}"
+          y="{{suit[2].y}}"
+          direction="all"
+          bindchange="onChange"
+          data-type="2"
+        >
+          <cover-image src="{{suit[2].url}}"></cover-image>
+          <!-- <cover-image src='http://prl9w3brg.bkt.clouddn.com/a2.png'></cover-image> -->
+        </movable-view>
+        <movable-view
+          style="height: 140px; width: 100px;"
+          x="{{suit[3].x}}"
+          y="{{suit[3].y}}"
+          bindchange="onChange"
+          direction="all"
+          data-type="3"
+        >
+          <cover-image src="{{suit[3].url}}"></cover-image>
+          <!-- <cover-image src='http://prl9w3brg.bkt.clouddn.com/a3.png'></cover-image> -->
+        </movable-view>
+        <movable-view
+          style="height: 50px; width: 80px;"
+          x="{{suit[4].x}}"
+          y="{{suit[4].y}}"
+          direction="all"
+          bindchange="onChange"
+          data-type="4"
+        >
+          <cover-image src="{{suit[4].url}}"></cover-image>
+          <!-- <cover-image src='http://prl9w3brg.bkt.clouddn.com/a4.png'></cover-image> -->
+        </movable-view>
+      </movable-area>
+    </view>
+
+    <view>  
+      <i-tabs current="{{ current }}" bindchange="handleChange">
+        <i-tab key="1" title="配饰"></i-tab>
+        <i-tab key="2" title="上衣"></i-tab>
+        <i-tab key="3" title="下衣"></i-tab>
+        <i-tab key="4" title="鞋袜"></i-tab>
+      </i-tabs>
+      <view class="section" style="background-color: #fff">
+        <i-icon type="picture" size="36" color="#80848f" />
+        <i-button shape="circle" size="large" inline bind:click="onPicture">相册批量添加</i-button>
+        <i-icon type="picture" size="36" color="#80848f"	/>
+        <i-button shape="circle" size="large" inline bind:click="onCamera">拍照添加</i-button>
+      </view>
+      <swiper wx:if="{{tab1}}" class='tab' bindchange="handleSelect">
+        <block wx:for="{{clothesImg[0]}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" bindtap="handleSelector" data-type='1' />
+          </swiper-item>
+        </block>
+      </swiper>
+      <swiper wx:if="{{tab2}}" class='tab' bindchange="handleSelect">
+        <block wx:for="{{clothesImg[1]}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" bindtap="handleSelector" data-type='2'  />
+          </swiper-item>
+        </block>
+      </swiper>
+      <swiper wx:if="{{tab3}}" class='tab' bindchange="handleSelect">
+        <block wx:for="{{clothesImg[2]}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" bindtap="handleSelector" data-type='3'  />
+          </swiper-item>
+        </block>
+      </swiper>
+      <swiper wx:if="{{tab4}}" class='tab' bindchange="handleSelect">
+        <block wx:for="{{clothesImg[3]}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" bindtap="handleSelector" data-type='4'  />
+          </swiper-item>
+        </block>
+      </swiper>      
+      <view class="section" style="margin-top:18px">
+        <i-button shape="circle" size="large" openType='share'>分享好友</i-button>
+        <i-button shape="circle" size="large" bindtap="handleSuitSave">保存搭配</i-button>
+      </view>
+    </view>
+  </view>

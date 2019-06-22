@@ -1,0 +1,5 @@
+<text style='text-align:center'>建议反馈</text>
+ <form bindsubmit="bindFormSubmit">
+    <textarea placeholder=" " name="textarea" auto-height='true'  style='border:1px solid #666666;margin-left:5% ;margin-top:5%;margin-right:5%;margin-bottom:5%'/>
+    <button type="primary" size="large" style='display:inline-block;margin-left:40%;background-color:#FFCC33' form-type="submit">提交</button>
+  </form>

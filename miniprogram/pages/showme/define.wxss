@@ -1,0 +1,29 @@
+/* pages/define/define.wxss */
+.showcloth{
+  background-color: #ffffff;
+  width:350px;
+  margin: 5px 20px 0px 15px ;
+  border-bottom: 3px solid #c5c4c4;
+}
+.bodyframe{
+  display: inline-block;
+  background-color: #ffffff;
+}
+.desc{
+  font-size: 14px;
+  background-color: #ffffff;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+.btn1{
+  display: inline-block;
+  padding-right: 10px;
+}
+.picker{
+  display: inline-block;
+  margin-left:5px;
+  width: 260px;
+  background-image:url(https://img-blog.csdnimg.cn/2019052523280898.png);
+}

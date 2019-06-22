@@ -1,0 +1,26 @@
+<view style="background-color:white;">
+<view class='icon' style='margin-left:{{width}}px'>
+<image  style="width: 74px; height: 74px"
+src='{{userInfo.avatar_url}}'  >
+</image>
+</view>
+
+<view class="myname"><text >{{userInfo.nickname}}</text></view>
+<view class="mydesc1">收到了{{userInfo.liked}}个赞</view>
+<view class="mydesc2">身高：{{userInfo.height}}cm 体重：{{userInfo.weight}}kg</view>
+
+<view>
+<view  style='width:100%'>
+<view wx:for="{{message.data}}" wx:key="{{item.id}}" class='mycard' bindtap='enterdetail' data-dataset="{{item}}">
+  <image class='pic' src='{{item.pics_url}}'></image>
+  <view class="micon">
+  <image style=" width:42px;height: 42px;" src='{{item.avatar_url}}'>
+  </image>
+  </view>
+  <view class='name'>{{item.nickname}}</view>
+  <view class='desc'>{{item.content}}</view>
+</view>
+</view>
+</view>
+</view>
+<button style="font-size:14px;" bindtap='showmore'>查看更多</button>

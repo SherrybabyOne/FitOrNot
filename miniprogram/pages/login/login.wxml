@@ -1,0 +1,7 @@
+<view    class="login">
+<image src='../../images/my.png'></image>
+<view  wx:if="{{!hasLogin}}">
+<button bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo" type="primary"  size="large" style='display:inline-block;margin-left:35%; background-color:#FFCC33' >点击登陆</button>
+</view>
+</view>
+

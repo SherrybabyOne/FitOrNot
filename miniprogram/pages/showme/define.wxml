@@ -1,0 +1,24 @@
+<view style='background-color:white'>
+<form bindsubmit="bindFormSubmit">
+    <textarea placeholder="觉得这件衣服怎么样？" name="textarea" auto-height='true'  style='border:1px solid #666666;margin-left:5% ;margin-top:5%;margin-right:5%;margin-bottom:5%'/>
+ <view wx:if="{{flag==5}}">
+  <block wx:for="{{thiscloth.clothes}}" wx:key="{{item.id}}">
+ <image
+          class='showcloth'
+          style=""
+          mode="aspectFit"
+          src="{{item.pic_url}}"
+        ></image>
+  </block>
+</view>
+<view wx:else>
+ <image
+          class='showcloth'
+          style=""
+          mode="aspectFit"
+          src="{{thiscloth.pic_url}}"
+        ></image>
+</view>
+<button type="primary" size="large" style='display:inline-block;margin-left:40%;background-color:#FFCC33' form-type="submit">确定发布</button>
+ </form>
+  </view>

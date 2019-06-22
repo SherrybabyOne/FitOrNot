@@ -1,0 +1,18 @@
+.fitting .clothes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.fitting .section{
+  display: flex;
+  justify-content: center;
+}
+.fitting tab {
+  width: 100%;
+  height: 120px;
+}
+.fitting slide-image{
+  height: 100%;
+  margin: 0 auto;
+}

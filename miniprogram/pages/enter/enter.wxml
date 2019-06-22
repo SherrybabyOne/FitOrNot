@@ -1,0 +1,45 @@
+
+<view  class="abc" >
+    <image class="myicon" src="{{userInfo.avatar_url}}"></image>
+    <view class='myname'>{{userInfo.nickname}}</view>
+    <view class='mysign'>
+      <input name="send" style='display:inline-block;font-size:13px;' type="text" confirm-type='send' bindconfirm="bindsign" placeholder="{{userInfo.signature}}" />
+    </view>
+
+    <view class='mydesc'>性别：
+     {{gender=='2'?'女':'男'}}
+     </view>
+    <view class='mydesc'>身高：
+     <input name="send" style='display:inline-block;font-size:13px;' type="text" confirm-type='send' bindconfirm="bindheight" placeholder="{{userInfo.height}} (cm)" />
+     </view>
+     <view class='mydesc' style='padding-left:80px;'>体重：
+     <input name="send" style='display:inline-block;font-size:13px;' type="text" confirm-type='send' bindconfirm="bindweight" placeholder="{{userInfo.weight}}（kg)" />
+     </view>
+    </view> 
+
+<view wx:if="{{settingflag}}" style='margin:5px 10px;border:1px solid #FFCC33; background-color:white;' >
+<i-panel title="身材" >
+<form bindsubmit="submitmy" >
+    <view class="bodyframe">身材设置</view> 
+     <i-input name="height" value=" " type="digit" title="身高(cm)" placeholder="数字cm" maxlength="7"  style='padding-bottom:10px;padding-top:10px;'/>
+     <i-input name="weight" value=" " type="digit" title="体重(kg)" placeholder="数字kg" maxlength="7"  style='padding-bottom:10px;padding-top:10px;'/>
+     <i-input name="signature" value=" " type="textarea" title="个性签名" placeholder="（最多20字）" maxlength="20"  style='padding-bottom:10px;padding-top:10px;'/>
+     <button form-type="submit" bindtap="resetflag" type='mini'  style=''>确定</button>
+</form>
+</i-panel>
+</view>
+
+<i-cell-group >
+    <i-cell title="在圈子显示我的身材">
+        <switch name="switch1" checked='{{show}}' color='#ffcc33' bindchange="switchChange" /> 
+    </i-cell>
+    <i-cell title="我的圈子" is-link url="../myhome/myhome">
+    </i-cell>
+    <i-cell title="常见问题" is-link url="../question/question"></i-cell>
+    <i-cell title="建议反馈" is-link url="../feedback/feedback"></i-cell>
+</i-cell-group>
+
+<button class="but1" open-type="share" >分享给好友</button>
+    
+
+  

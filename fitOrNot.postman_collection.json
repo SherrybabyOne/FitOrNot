@@ -1,0 +1,907 @@
+{
+	"info": {
+		"_postman_id": "104e8daa-19b5-4ee3-8dee-7812d724c6f8",
+		"name": "fitOrNot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "不经过服务器access_token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx3041c6b5117e27bd&secret=ad6ce576aaad4bb613ffb8510719bb01",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weixin",
+						"qq",
+						"com"
+					],
+					"path": [
+						"cgi-bin",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credential"
+						},
+						{
+							"key": "appid",
+							"value": "wx3041c6b5117e27bd"
+						},
+						{
+							"key": "secret",
+							"value": "ad6ce576aaad4bb613ffb8510719bb01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "不经过服务直接urlcode2session",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weixin.qq.com/sns/jscode2session?appid=wx3041c6b5117e27bd&secret=ad6ce576aaad4bb613ffb8510719bb01&js_code=0335I56718xl1L1Tmd571Z616715I56S&grant_type=authorization_code",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weixin",
+						"qq",
+						"com"
+					],
+					"path": [
+						"sns",
+						"jscode2session"
+					],
+					"query": [
+						{
+							"key": "appid",
+							"value": "wx3041c6b5117e27bd"
+						},
+						{
+							"key": "secret",
+							"value": "ad6ce576aaad4bb613ffb8510719bb01"
+						},
+						{
+							"key": "js_code",
+							"value": "0335I56718xl1L1Tmd571Z616715I56S"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE code2session",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"code\"\t:\t\"033dzCzM0z3lea2FgcBM0T7DzM0dzCzo\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}user/code2session",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"code2session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE setuserInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"figure\"\t:\t\n\t{\n\t\t\"hide_figure\"\t:\t1\n\t},\n\t\"signature\"\t:\t\"四五六四五七\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}user/userInfo",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"userInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE getuserInfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}user/userInfo",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"userInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE setClothes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"clothes\" : {\n\t\t\t\"1\"\t:\t{\n\t\t\t\t\"pic_url\" : \"eee.com\",\n\t\t\t\t\"category\"\t:\t\"3\"\n\t\t\t},\n\t\t\t\"2\"\t:\t{\n\t\t\t\t\"pic_url\" : \"urlurl.com\",\n\t\t\t\t\"price\"\t:\t\"400\",\n\t\t\t\t\"color\" :\t\"1\",\n\t\t\t\t\"category\"\t:\t\"1\",\n\t\t\t\t\"brand\" : \"海飞丝\"\n\t\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{url}}clothes/clothes",
+					"host": [
+						"{{url}}clothes"
+					],
+					"path": [
+						"clothes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE getClothes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"name": "Content-Type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}clothes/clothes",
+					"host": [
+						"{{url}}clothes"
+					],
+					"path": [
+						"clothes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE updateClothes",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"name": "Content-Type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"clothes\" : {\n\t\t\t\"1\"\t:\t{\n\t\t\t\t\"id\" : \"3\",\n\t\t\t\t\"brand\" : \"牛客\",\n\t\t\t\t\"price\"\t:\t\"2520\"\n\t\t\t},\n\t\t\t\"2\"\t:\t{\n\t\t\t\t\"id\" : \"6\",\n\t\t\t\t\"brand\" : \"麻辣香锅\"\n\t\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{url}}clothes/clothes",
+					"host": [
+						"{{url}}clothes"
+					],
+					"path": [
+						"clothes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERViCE deleteClothes",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}clothes/clothes/8",
+					"host": [
+						"{{url}}clothes"
+					],
+					"path": [
+						"clothes",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE createMoment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pics_url\" : [\n\t\t\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558889532667&di=43ebf022fc2f7f2b3f8e17f9ee2836ae&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201804%2F17%2F20180417124135_XWkKa.jpeg\"\n\t],\n\t\"content\" : \"人工智能\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}moment/moment",
+					"host": [
+						"{{url}}moment"
+					],
+					"path": [
+						"moment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE \bgetMoment",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}moment/moment",
+					"host": [
+						"{{url}}moment"
+					],
+					"path": [
+						"moment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE othersInfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}user/othersInfo/o9i844xvJ4C2WiLe3ZAwz3nSWe3g",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"othersInfo",
+						"o9i844xvJ4C2WiLe3ZAwz3nSWe3g"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE getOne'sMoment",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}moment/getonesmoment/o9i844xvJ4C2WiLe3ZAwz3nSWe3g",
+					"host": [
+						"{{url}}moment"
+					],
+					"path": [
+						"getonesmoment",
+						"o9i844xvJ4C2WiLe3ZAwz3nSWe3g"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE createFollow",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}user/follow/fakeopenid2",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"follow",
+						"fakeopenid2"
+					]
+				},
+				"description": "返回值\n- 0 关注成功\n- -1 失败,不能关注自己\n- -2 已经关注,不能重复关注"
+			},
+			"response": []
+		},
+		{
+			"name": "SERCVICE checkIfFollowed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}user/checkIfFollowed/fakeopenid2",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"checkIfFollowed",
+						"fakeopenid2"
+					]
+				},
+				"description": "返回值\n- 0 为未关注\n- -1 为已经关注"
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE deleteFollow",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}user/follow/fakeopenid2",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"follow",
+						"fakeopenid2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE allFollowed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}user/allFollowed",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"allFollowed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SERVIOCE createLike",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}moment/like/1",
+					"host": [
+						"{{url}}moment"
+					],
+					"path": [
+						"like",
+						"1"
+					]
+				},
+				"description": "- 0 like成功\n- -1 失败,重复like"
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE deleteLike",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}moment/like/1",
+					"host": [
+						"{{url}}moment"
+					],
+					"path": [
+						"like",
+						"1"
+					]
+				},
+				"description": "最后一个参数为朋友圈的id"
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE checkIfLiked",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}moment/checkIfLiked/1",
+					"host": [
+						"{{url}}moment"
+					],
+					"path": [
+						"checkIfLiked",
+						"1"
+					]
+				},
+				"description": "返回值\n- 0 为未like\n- -1 为已经like"
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE getNicknameByOpenid",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}user/getNicknameByOpenid/o9i844xvJ4C2WiLe3ZAwz3nSWe3g",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"getNicknameByOpenid",
+						"o9i844xvJ4C2WiLe3ZAwz3nSWe3g"
+					]
+				},
+				"description": "- data 为昵称\n- url中最后的字符串为参数,填被查询人的openid"
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE createComment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"comment\"\t:\t{\n\t\t\t\"content\"\t:\t\"一一得一\",\n\t\t\t\"to\"\t:\t\"1\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{url}}moment/comment",
+					"host": [
+						"{{url}}moment"
+					],
+					"path": [
+						"comment"
+					]
+				},
+				"description": "- content ,to必填,to 为朋友圈/moment的id\n- 选填refer ,用来代表这是一条回复评论(回复别人的评论的评论),refer 为回复对象的openid"
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE deleteComment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}moment/comment/4",
+					"host": [
+						"{{url}}moment"
+					],
+					"path": [
+						"comment",
+						"4"
+					]
+				},
+				"description": "最后一个为url参数,为comment的id"
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE getCommentByMoment",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}moment/comment/1",
+					"host": [
+						"{{url}}moment"
+					],
+					"path": [
+						"comment",
+						"1"
+					]
+				},
+				"description": "通过MomentId 获取所有这条朋友圈的评论,按照时间递增顺序\n- 当refer不为null时,存在referName,referName 为回复对象的名字\n- fromName 为评论者的名字"
+			},
+			"response": []
+		},
+		{
+			"name": "SERVICE getConfig",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}user/getConfig",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"getConfig"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setSuit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"suit\" : {\n\t\t\t\"1\"\t:\t{\n\t\t\t\t\"id\"\t:\t\"9\",\n\t\t\t\t\"x\"\t:\t33,\n\t\t\t\t\"y\"\t:\t222\n\t\t\t},\n\t\t\t\"2\"\t:\t{\n\t\t\t\t\"id\"\t:\t\"10\",\n\t\t\t\t\"x\"\t:\t123,\n\t\t\t\t\"y\"\t:\t45\n\t\t\t},\n\t\t\t\"3\"\t:\t{\n\t\t\t\t\"id\"\t:\t\"11\",\n\t\t\t\t\"x\"\t:\t123,\n\t\t\t\t\"y\"\t:\t45\n\t\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{url}}clothes/suit",
+					"host": [
+						"{{url}}clothes"
+					],
+					"path": [
+						"suit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSuit",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}clothes/suit",
+					"host": [
+						"{{url}}clothes"
+					],
+					"path": [
+						"suit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteSuit",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}clothes/suit/1",
+					"host": [
+						"{{url}}clothes"
+					],
+					"path": [
+						"suit",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wearSuit",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}clothes/suit/wear/2",
+					"host": [
+						"{{url}}clothes"
+					],
+					"path": [
+						"suit",
+						"wear",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setConfig",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/user/setConfig/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"setConfig",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setName",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"type": "text",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\" : {\n\t\t\"nickname\"\t:\t\"舒克\",\n\t\t\"avatar_url\"\t:\t\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559370842820&di=675393119471806412895c2fbc3b72fa&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201402%2F27%2F20140227171316_8Gw5y.thumb.600_0.jpeg\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{url}}user/setName",
+					"host": [
+						"{{url}}user"
+					],
+					"path": [
+						"setName"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

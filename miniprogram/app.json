@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/showme/define",
+    "pages/showme/showcloth",
+    "pages/question/question",
+    "pages/myhome/myhome",
+    "pages/room/index",
+    "pages/feedback/feedback",
+    "pages/enter/enter",
+    "pages/define/define",
+    "pages/define/showcloth",
+    "pages/circle/circle",
+    "pages/circle/detail",
+    "pages/circle/showme"
+  ],
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/room/index",
+        "text": "试衣间",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/define/showcloth",
+        "text": "衣橱",
+        "iconPath": "images/box.png",
+        "selectedIconPath": "images/box.png"
+      },
+      {
+        "pagePath": "pages/circle/circle",
+        "text": "圈子",
+        "iconPath": "images/mess.png",
+        "selectedIconPath": "images/mess.png"
+      },
+      {
+        "pagePath": "pages/enter/enter",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my.png"
+      }
+     
+    ]
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "搭不搭",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

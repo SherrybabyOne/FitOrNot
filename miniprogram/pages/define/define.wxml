@@ -1,0 +1,38 @@
+<view style='background-color:white'>
+
+ <image
+          class='showcloth'
+          style=""
+          mode="aspectFit"
+          src="{{thiscloth.pic_url}}"
+        ></image>
+ </view>
+ <button  class="btn1" size='mini' style='background-color:white' >
+       类别
+  </button>
+<view class='bodyframe'>
+
+  
+  <button  id="1" class="btn1"  style='background-color:{{btnone}}'  bindtap='changeup' >
+       配饰
+  </button>
+  <button id="2" class="btn1"  style='background-color:{{btntwo}}' bindtap='changeup' >
+       上衣
+  </button>
+  <button id="3" class="btn1"  style='background-color:{{btnthree}}' bindtap='changeup' >
+       下衣
+  </button>
+  <button id="4" class="btn1"  style='background-color:{{btnfour}}' bindtap='changeup' >
+       鞋袜
+  </button>
+  <button  class="btn1"  style='background-color:{{btnfive}}' bindtap='deletec' >
+       删除
+  </button>
+   <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+   <text style='font-size:18px;'>当前颜色：</text>
+  <view class="picker"><text style='font-size:18px;' decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>{{array[thiscloth.color]}}</view>
+  </picker>
+   <view style='padding-top:5px;padding-left:5px;display:inline-block'><text style='font-size:18px;'>购买价格：</text>
+   <input name="send" style='display:inline-block;font-size:18px;' type="text" confirm-type='send' bindconfirm="bindconfirm" placeholder="{{thiscloth.price}}" />
+   </view>
+</view>

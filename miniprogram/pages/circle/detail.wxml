@@ -1,0 +1,36 @@
+<view  class="abc" >
+    <view bindtap='toit'>
+    <image class="myicon" src="{{item.avatar_url}}"></image>
+    </view>
+    <view bindtap='toit'>
+    <view class='myname' style='' >{{item.nickname}}</view>
+    </view>
+    <button  size='mini' class='btn2' bindtap='ilike'><image class="like" style='' src='/images/dianzan_1.png'></image>点赞{{item.likes_num}}</button>  
+    <button size='mini' class='btn' bindtap='ilove'><image class="like" style='' src='/images/dianzan.png'></image>关注</button>
+    <view class='mydesc'>
+    {{item.content}}   
+    <!-- 图片 -->
+     <view class='photo-view'>
+      <view class='photo' wx:for='{{item.pics_url}}'  style='width:{{photoWidth}}px;height:{{photoWidth}}px'>
+        <image bindtap='LookPhoto' data-photUrl='{{item}}' src='{{item}}' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+      </view>
+     </view>
+     </view>
+
+     <view class='TDD-view'> </view>
+      <view class='zan-view'>
+          <!-- 评论 -->
+          <view class='discuss-view'>
+            <view class='discuss' wx:for='{{comment}}' >
+              <label bindtap='TouchZanUser' data-openid='{{item.from}}' class='discuss-user'>{{item.fromName}}：</label>
+              <label class='discuss-content' bindtap='deletec' data-dataset="{{item}}" >{{item.content}}</label>
+            </view>
+          </view>
+      </view>
+      <view class='idiscuss'>
+        <view style='display:inline-block;'>评论：   </view>
+      <input bindconfirm="bindcomment" data="{{item}}" style='display:inline-block;' maxlength="50" placeholder="    最大输入长度50" />
+      </view>
+      
+    </view>
+<button style="font-size:14px;" bindtap='deletemy'>删除圈子</button>

@@ -1,0 +1,20 @@
+<!--pages/circle/cicle.wxml-->
+<view bindtap='showme'  style='font-size:14px;text-align:center;background-color:white'>
+<image src="/images/fabu.png" style='margin-top:4px;width:30px;height:30px;'></image><button hover-class="none" size='mini'>发布到我的圈子</button>
+</view>
+
+<view>
+<view  wx:for="{{message}}" wx:key="{{item.id}}" 
+class='mycard'  bindtap='enterdetail' data-dataset="{{item}}">
+  <image class='pic' src='{{item.pics_url[0]}}'></image>
+  <view class="icon">
+  <image style=" width:42px;height: 42px;" src='{{item.avatar_url}}'>
+  </image>
+  </view>
+  <view class='name'>{{item.nickname}}</view>
+  <view class='desc'>{{item.content}}</view>
+</view>
+</view>
+
+<button style="font-size:14px;" bindtap='showmore'>查看更多</button>
+
